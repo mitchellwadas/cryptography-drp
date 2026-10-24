@@ -1,5 +1,6 @@
 from random import randint  # for testing
 
+
 # Naive division with remainder
 def division(a,b):
     assert a >= 0
@@ -14,6 +15,7 @@ def division(a,b):
             r -= b
             q += 1
 
+
 # Simple Euclidean algorithm
 def simple_euclidean(a,b):
     assert a >= 0
@@ -26,6 +28,7 @@ def simple_euclidean(a,b):
     else:
         q, r = division(a,b)
         return simple_euclidean(b,r)
+
 
 # Extended Euclidean algorithm
 def extended_euclidean(a,b):
@@ -61,6 +64,7 @@ def extended_euclidean(a,b):
 
             r0 = r1
             r1 = r
+
 
 def test(trials=10000):
 
