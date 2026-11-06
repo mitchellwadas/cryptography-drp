@@ -26,7 +26,7 @@ def simple_euclidean(a,b):
         return a
 
     else:
-        q, r = division(a,b)
+        q, r = divmod(a,b)
         return simple_euclidean(b,r)
 
 
@@ -49,7 +49,7 @@ def extended_euclidean(a,b):
     v1 = 1
 
     while True:
-        q, r = division(r0, r1)
+        q, r = divmod(r0, r1)
 
         if r == 0:
             return (r1, u1, v1)

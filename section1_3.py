@@ -48,6 +48,7 @@ def test_bin(trials=10000):
 # (lowish storage) variant of the fast powering algorithm
 def fast_powering(g,a,m):
     assert m >= 1
+    # computing g^a mod m
 
     binary = int_to_binary_rev(a)
     result = 1
