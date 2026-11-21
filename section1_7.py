@@ -1,7 +1,7 @@
 import random
 
 
-def message_to_integer_blocks(message, block_size=16):
+def message_to_integer_blocks(message, block_size=256):
     data = message.encode('latin-1')
 
     # pad with zero bytes to a multiple of block_size
@@ -14,7 +14,7 @@ def message_to_integer_blocks(message, block_size=16):
     ]
 
 
-def integer_blocks_to_message(blocks, block_size=16):
+def integer_blocks_to_message(blocks, block_size=256):
     data = b''.join(
         n.to_bytes(block_size, byteorder='big')
         for n in blocks
@@ -26,7 +26,7 @@ def integer_blocks_to_message(blocks, block_size=16):
 def test(trials=10000):
 
     for i in range(trials):
-        block_size = random.randint(1, 128)
+        block_size = random.randint(1, 256)
         message_length = random.randint(0, 2000)
 
         # generate a random latin-1 message (all values 0-255)

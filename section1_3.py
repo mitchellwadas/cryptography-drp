@@ -50,11 +50,11 @@ def fast_powering(g,a,m):
     assert m >= 1
     # computing g^a mod m
 
-    binary = int_to_binary_rev(a)
+    binary = bin(a)[2:] # int_to_binary_rev(a)
     result = 1
     gi = g
 
-    for ai in binary:
+    for ai in reversed(binary):
         result = (result * (gi ** int(ai))) % m
         gi = (gi ** 2) % m
     
